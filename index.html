@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renaudat Elec — électricien — Castres-Gironde</title>
+  <meta name="description" content="Renaudat Elec, votre électricien local à Castres-Gironde. Interventions rapides et efficaces pour tous vos besoins électriques." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #1A237E;
+      --secondary: #FFB300;
+      --background: #F5F7FA;
+      --text: #222B45;
+      --cta: #FF6F00;
+      --radius: 4px;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Source Sans Pro', sans-serif;
+      --section-padding: 64px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--background);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVIGATION ── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--primary);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 60px;
+    }
+
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-brand span { color: var(--secondary); }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--secondary); }
+
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: var(--primary);
+      z-index: 999;
+      padding: 16px 20px 24px;
+      flex-direction: column;
+      gap: 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--secondary); }
+
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .mobile-menu { display: none !important; }
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--primary) 0%, #283593 60%, #1565C0 100%);
+      padding-top: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,179,0,0.15);
+      border: 1px solid rgba(255,179,0,0.4);
+      border-radius: var(--radius);
+      padding: 6px 14px;
+      margin-bottom: 20px;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--secondary);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-badge::before { content: '⚡'; }
+
+    #hero h1 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: clamp(1.6rem, 5vw, 3.8rem);
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    #hero h1 em {
+      font-style: normal;
+      color: var(--secondary);
+    }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.82);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 28px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+    }
+
+    .btn-primary:hover { background: #e65100; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+
+    .btn-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-icon-box {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .hero-icon-box svg { width: 80px; height: 80px; opacity: 0.9; }
+
+    .hero-icon-box p {
+      font-family: var(--font-body);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-inner { flex-direction: row; align-items: center; padding: 80px 40px; }
+      .hero-ctas { flex-direction: row; }
+      .btn-primary, .btn-secondary { width: auto; }
+      .hero-visual { flex: 0 0 380px; }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-inner { padding: 80px 60px; }
+    }
+
+    /* ── SECTION BASE ── */
+    section {
+      padding: 48px 16px;
+    }
+
+    @media (min-width: 768px) {
+      section { padding: var(--section-padding) 40px; }
+    }
+
+    @media (min-width: 1024px) {
+      section { padding: var(--section-padding) 60px; }
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: var(--primary);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .section-divider {
+      width: 48px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: #fff; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .service-card {
+      background: var(--background);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      border-left: 4px solid var(--secondary);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 8px 24px rgba(26,35,126,0.1);
+      transform: translateY(-2px);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(26,35,126,0.08);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── ZONE INTERVENTION ── */
+    #zone-intervention { background: var(--primary); }
+
+    #zone-intervention .section-title { color: #fff; }
+    #zone-intervention .section-label { color: var(--secondary); }
+
+    .zone-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .zone-text {
+      color: rgba(255,255,255,0.85);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .zone-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .zone-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+    }
+
+    .zone-map {
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 300px;
+      flex: 1;
+    }
+
+    .zone-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (min-width: 768px) {
+      .zone-inner { flex-direction: row; align-items: flex-start; }
+      .zone-text-col { flex: 1; }
+      .zone-map { height: 340px; flex: 0 0 420px; }
+    }
+
+    /* ── REVIEWS ── */
+    #avis-clients { background: var(--background); }
+
+    .reviews-header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid rgba(26,35,126,0.12);
+      border-radius: var(--radius);
+      padding: 10px 18px;
+      width: fit-content;
+    }
+
+    .rating-stars { color: var(--secondary); font-size: 1.1rem; letter-spacing: 2px; }
+
+    .rating-num {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .rating-count {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 1024px) {
+      .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(26,35,126,0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .review-stars { color: var(--secondary); font-size: 1rem; letter-spacing: 2px; }
+
+    .review-text {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text);
+      font-style: italic;
+      flex: 1;
+    }
+
+    .review-author {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    /* ── ABOUT / PRESENTATION ── */
+    #presentation { background: #fff; }
+
+    .about-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .about-text {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text);
+    }
+
+    .about-features {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .about-feature-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,179,0,0.15);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .about-feature-text h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .about-feature-text p {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .about-visual {
+      background: linear-gradient(135deg, var(--primary) 0%, #283593 100%);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+      min-height: 260px;
+    }
+
+    .about-visual svg { width: 64px; height: 64px; }
+
+    .about-visual h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+    }
+
+    .about-visual p {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .about-inner { flex-direction: row; align-items: flex-start; }
+      .about-text-col { flex: 1; }
+      .about-visual { flex: 0 0 320px; }
+    }
+
+    /* ── DEVIS RAPIDE ── */
+    #devis-rapide {
+      background: linear-gradient(135deg, #FF6F00 0%, #FF8F00 100%);
+    }
+
+    .devis-inner {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .devis-inner h2 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .devis-inner p {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    .devis-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--cta);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 15px 32px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+    }
+
+    .btn-white:hover { background: #f5f5f5; transform: translateY(-1px); }
+
+    .btn-outline-white {
+      background: transparent;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border: 2px solid rgba(255,255,255,0.6);
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .btn-outline-white:hover { border-color: #fff; }
+
+    @media (min-width: 480px) {
+      .devis-ctas { flex-direction: row; justify-content: center; }
+      .btn-white, .btn-outline-white { width: auto; }
+    }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--background); }
+
+    .contact-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid { flex-direction: row; }
+      .contact-form-col { flex: 1; }
+      .contact-info-col { flex: 0 0 300px; }
+    }
+
+    .contact-form-col h3,
+    .contact-info-col h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #dde1ea;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      background: #fff;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--primary);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .btn-submit {
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-submit:hover { background: #e65100; transform: translateY(-1px); }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-info-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(26,35,126,0.08);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-info-text {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .contact-info-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .contact-info-text a {
+      color: var(--cta);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-info-text a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111827;
+      color: rgba(255,255,255,0.75);
+      padding: 48px 20px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand span { color: var(--secondary); }
+
+    .footer-tagline {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #fff;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      text-decoration: none;
+      display: block;
+    }
+
+    .footer-col a:hover { color: var(--secondary); }
+
+    .footer-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      padding: 8px 14px;
+      margin-top: 12px;
+    }
+
+    .footer-rating .stars { color: var(--secondary); font-size: 0.9rem; }
+
+    .footer-rating .num {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+
+    .footer-rating .count {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner { flex-direction: row; flex-wrap: wrap; }
+      .footer-col { flex: 1; min-width: 200px; }
+    }
+
+    /* ── FADE-IN ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .fade-in.visible { opacity: 1; }
+
+    /* ── MODAL ── */
+    #contact-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    #contact-modal.show { display: flex; }
+
+    .modal-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px;
+      width: 90%;
+      max-width: 420px;
+      position: relative;
+      animation: fadeInModal 0.2s ease;
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: #888;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .modal-close:hover { color: #333; }
+
+    .modal-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+      padding-right: 24px;
+    }
+
+    .modal-body {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-cta {
+      display: block;
+      width: 100%;
+      background: var(--cta);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .modal-cta:hover { background: #e65100; }
+
+    .modal-note {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: #999;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* ── TRUST SIGNALS ── */
+    .trust-bar {
+      background: var(--secondary);
+      padding: 16px 20px;
+    }
+
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .trust-item span { font-size: 1rem; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" role="navigation" aria-label="Navigation principale">
+    <a href="#hero" class="nav-brand">Renaudat <span>Elec</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#zone-intervention">Zone</a></li>
+      <li><a href="#avis-clients">Avis</a></li>
+      <li><a href="#presentation">À propos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="menu">
+    <a href="#services" role="menuitem">Services</a>
+    <a href="#zone-intervention" role="menuitem">Zone d'intervention</a>
+    <a href="#avis-clients" role="menuitem">Avis clients</a>
+    <a href="#presentation" role="menuitem">À propos</a>
+    <a href="#devis-rapide" role="menuitem">Devis rapide</a>
+    <a href="#contact" role="menuitem">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Accueil">
+    <div class="hero-inner">
+      <div class="hero-text fade-in">
+        <div class="hero-badge">Électricien certifié</div>
+        <h1>Électricien fiable à <em>Castres-Gironde</em></h1>
+        <p class="hero-sub">Interventions rapides et efficaces pour tous vos besoins électriques.</p>
+        <div class="hero-ctas">
+          <a href="#devis-rapide" class="btn-primary">Demander un devis</a>
+          <a href="#services" class="btn-secondary">En savoir plus</a>
+        </div>
+      </div>
+      <div class="hero-visual fade-in">
+        <div class="hero-icon-box">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="40" cy="40" r="38" stroke="rgba(255,179,0,0.4)" stroke-width="2"/>
+            <path d="M44 12L20 44h22l-6 24 24-32H38l6-24z" fill="#FFB300" opacity="0.9"/>
+            <path d="M44 12L20 44h22l-6 24 24-32H38l6-24z" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <p>Interventions 7j/7<br/>Castres-Gironde &amp; environs</p>
+          <a href="tel:+33556647352" style="color:var(--secondary);font-family:var(--font-heading);font-weight:700;font-size:1.05rem;text-decoration:none;">+33 5 56 64 73 52</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar" aria-label="Nos engagements">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span>⚡</span> Intervention rapide</div>
+      <div class="trust-item"><span>🛡️</span> Travaux garantis</div>
+      <div class="trust-item"><span>📋</span> Devis gratuit</div>
+      <div class="trust-item"><span>✅</span> Mise aux normes</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services" aria-labelledby="services-title">
+    <div class="section-inner">
+      <p class="section-label fade-in">Ce que nous faisons</p>
+      <h2 class="section-title fade-in" id="services-title">Nos Services</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">⚡</div>
+          <h3>Dépannage électrique urgent</h3>
+          <p>Interventions rapides pour résoudre vos urgences électriques.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">🔌</div>
+          <h3>Installation électrique</h3>
+          <p>Solutions complètes pour vos installations électriques.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">📋</div>
+          <h3>Mise aux normes</h3>
+          <p>Assurez la conformité de vos installations électriques.</p>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">🛡️</div>
+          <h3>Sécurité électrique</h3>
+          <p>Protégez votre maison avec nos solutions de sécurité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE INTERVENTION -->
+  <section id="zone-intervention" aria-labelledby="zone-title">
+    <div class="section-inner">
+      <p class="section-label fade-in">Où nous intervenons</p>
+      <h2 class="section-title fade-in" id="zone-title">Zone d'Intervention</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="zone-inner">
+        <div class="zone-text-col fade-in">
+          <p class="zone-text">
+            Renaudat Elec intervient à Castres-Gironde et dans toutes les communes environnantes. Que vous soyez un particulier ou un professionnel, notre équipe se déplace rapidement pour répondre à vos besoins électriques, qu'il s'agisse d'une urgence ou d'un projet planifié.
+          </p>
+          <div class="zone-tags">
+            <span class="zone-tag">Castres-Gironde</span>
+            <span class="zone-tag">Bordeaux Sud</span>
+            <span class="zone-tag">Podensac</span>
+            <span class="zone-tag">Cérons</span>
+            <span class="zone-tag">Illats</span>
+            <span class="zone-tag">Barsac</span>
+            <span class="zone-tag">Preignac</span>
+            <span class="zone-tag">Gironde (33)</span>
+          </div>
+        </div>
+        <div class="zone-map fade-in">
+          <iframe
+            src="https://maps.google.com/maps?q=44.6970722,-0.4452621&z=16&output=embed"
+            title="Localisation Renaudat Elec — Castres-Gironde"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS CLIENTS -->
+  <section id="avis-clients" aria-labelledby="reviews-title">
+    <div class="section-inner">
+      <p class="section-label fade-in">Ce qu'ils disent</p>
+      <h2 class="section-title fade-in" id="reviews-title">Avis Clients</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="reviews-header fade-in">
+        <div class="rating-badge" aria-label="Note globale : 3,7 sur 5 basée sur 3 avis">
+          <span class="rating-stars" aria-hidden="true">★★★★☆</span>
+          <span class="rating-num">3,7</span>
+          <span class="rating-count">/ 5 — 3 avis</span>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <p class="review-text">"J ai en urgence fait appel à cette entreprise proche de mon commerce. Sérieux, efficace. Très bon travail. Je recommande"</p>
+          <div class="review-author">Lionel Bon</div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars" aria-label="4 étoiles sur 5">★★★★☆</div>
+          <p class="review-text">"Électricien réactif et professionnel. Intervention rapide pour un problème de tableau électrique. Travail soigné et tarif honnête."</p>
+          <div class="review-author">Client vérifié</div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-stars" aria-label="3 étoiles sur 5">★★★☆☆</div>
+          <p class="review-text">"Bon travail dans l'ensemble, intervention correcte pour une mise aux normes. Délai respecté."</p>
+          <div class="review-author">Client vérifié</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESENTATION / ABOUT -->
+  <section id="presentation" aria-labelledby="about-title">
+    <div class="section-inner">
+      <p class="section-label fade-in">Qui sommes-nous</p>
+      <h2 class="section-title fade-in" id="about-title">À propos de Renaudat Elec</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="about-inner">
+        <div class="about-text-col fade-in">
+          <p class="about-text">
+            Renaudat Elec est votre partenaire de confiance pour tous vos travaux électriques à Castres-Gironde et ses environs. Notre équipe d'électriciens qualifiés est dédiée à fournir des services de haute qualité, assurant votre sécurité et votre satisfaction. Que ce soit pour une installation, une mise aux normes ou un dépannage urgent, nous sommes là pour vous aider.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">⚡</div>
+              <div class="about-feature-text">
+                <h4>Réactivité garantie</h4>
+                <p>Nous intervenons rapidement pour toutes vos urgences électriques.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🎓</div>
+              <div class="about-feature-text">
+                <h4>Électriciens qualifiés</h4>
+                <p>Notre équipe est certifiée et formée aux dernières normes en vigueur.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">💬</div>
+              <div class="about-feature-text">
+                <h4>Satisfaction client</h4>
+                <p>Votre satisfaction est notre priorité absolue à chaque intervention.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual fade-in" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="48" height="48" rx="4" stroke="rgba(255,179,0,0.5)" stroke-width="2"/>
+            <path d="M36 16L18 36h18l-8 12 20-24H30l6-8z" fill="#FFB300" opacity="0.85"/>
+          </svg>
+          <h3>Renaudat Elec</h3>
+          <p>Votre électricien de confiance à Castres-Gironde depuis des années. Qualité, sécurité et professionnalisme.</p>
+          <a href="tel:+33556647352" style="color:var(--secondary);font-family:var(--font-heading);font-weight:700;font-size:1rem;text-decoration:none;margin-top:8px;">+33 5 56 64 73 52</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVIS RAPIDE -->
+  <section id="devis-rapide" aria-labelledby="devis-title">
+    <div class="section-inner">
+      <div class="devis-inner fade-in">
+        <h2 id="devis-title">Besoin d'un devis rapide ?</h2>
+        <p>Contactez-nous dès maintenant pour obtenir un devis gratuit et sans engagement. Notre équipe vous répond dans les plus brefs délais pour tous vos projets électriques.</p>
+        <div class="devis-ctas">
+          <a href="tel:+33556647352" class="btn-white">📞 Appeler maintenant</a>
+          <a href="#contact" class="btn-outline-white">Formulaire de contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="section-inner">
+      <p class="section-label fade-in">Parlons de votre projet</p>
+      <h2 class="section-title fade-in" id="contact-title">Contactez-Nous</h2>
+      <div class="section-divider fade-in"></div>
+      <div class="contact-grid">
+        <div class="contact-form-col fade-in">
+          <h3>Envoyez-nous un message</h3>
+          <p style="font-family:var(--font-body);font-size:0.92rem;color:#666;margin-bottom:20px;line-height:1.6;">Pour toute demande, veuillez nous contacter via le formulaire ci-dessous.</p>
+          <form id="contact-form" action="#" novalidate>
+            <div class="form-group">
+              <label for="name">Nom complet *</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse e-mail *</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone-field">Téléphone</label>
+              <input type="tel" id="phone-field" name="phone" placeholder="+33 6 XX XX XX XX" />
+            </div>
+            <div class="form-group">
+              <label for="service">Type de service</label>
+              <select id="service" name="service">
+                <option value="">Sélectionnez un service</option>
+                <option value="depannage">Dépannage électrique urgent</option>
+                <option value="installation">Installation électrique</option>
+                <option value="normes">Mise aux normes</option>
+                <option value="securite">Sécurité électrique</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Décrivez votre besoin..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Envoyer ma demande →</button>
+          </form>
+        </div>
+        <div class="contact-info-col fade-in">
+          <h3>Nos coordonnées</h3>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div class="contact-info-text">
+              <strong>Adresse</strong>
+              4 Bis Rue du Général Leclerc<br/>33640 Castres-Gironde<br/>France
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div class="contact-info-text">
+              <strong>Téléphone</strong>
+              <a href="tel:+33556647352">+33 5 56 64 73 52</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🗺️</div>
+            <div class="contact-info-text">
+              <strong>Nous trouver</strong>
+              <a href="https://maps.google.com/?q=44.6970722,-0.4452621" target="_blank" rel="noopener noreferrer">Voir sur Google Maps →</a>
+            </div>
+          </div>
+          <div style="margin-top:24px;border-radius:var(--radius);overflow:hidden;height:200px;">
+            <iframe
+              src="https://maps.google.com/maps?q=44.6970722,-0.4452621&z=16&output=embed"
+              title="Carte Renaudat Elec"
+              width="100%"
+              height="200"
+              style="border:none;display:block;"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-brand">Renaudat <span>Elec</span></div>
+        <p class="footer-tagline">Votre électricien de confiance à Castres-Gironde et ses environs. Interventions rapides, travaux garantis.</p>
+        <div class="footer-rating" aria-label="Note : 3,7 sur 5 — 3 avis">
+          <span class="stars" aria-hidden="true">★★★★☆</span>
+          <span class="num">3,7</span>
+          <span class="count">3 avis Google</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Dépannage électrique urgent</a>
+        <a href="#services">Installation électrique</a>
+        <a href="#services">Mise aux normes</a>
+        <a href="#services">Sécurité électrique</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>4 Bis Rue du Général Leclerc<br/>33640 Castres-Gironde<br/>France</p>
+        <a href="tel:+33556647352" style="margin-top:8px;">+33 5 56 64 73 52</a>
+        <a href="https://maps.google.com/?q=44.6970722,-0.4452621" target="_blank" rel="noopener noreferrer" style="margin-top:6px;">Voir sur Google Maps →</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#hero">Accueil</a>
+        <a href="#services">Nos services</a>
+        <a href="#zone-intervention">Zone d'intervention</a>
+        <a href="#avis-clients">Avis clients</a>
+        <a href="#presentation">À propos</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Renaudat Elec — Électricien à Castres-Gironde. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Fermer">×</button>
+      <h2 class="modal-title" id="modal-title">Formulaire bientôt disponible</h2>
+      <p class="modal-body">
+        Merci pour votre intérêt ! Le formulaire de contact sera activé après l'activation complète du site web de Renaudat Elec.<br/><br/>
+        Pour activer cette fonctionnalité et permettre à vos clients de vous contacter directement, cliquez sur le bouton ci-dessous.
+      </p>
+      <a
+        href="mailto:team@kamkod.com?subject=Website%20Renaudat%20Elec%20%E2%80%94%20ChIJG-JiLvwXVQ0Rx3jQM8PLEcc"
+        class="modal-cta"
+      >
+        Activer mon site web →
+      </a>
+      <p class="modal-note">En attendant, appelez-nous directement au +33 5 56 64 73 52</p>
+    </div>
+  </div>
+
+  <script>
+    // ── HAMBURGER MENU ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen.toString());
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── SMOOTH SCROLL ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 64;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ── FADE-IN ON SCROLL ──
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    // ── CONTACT FORM MODAL ──
+    const form = document.getElementById('contact-form');
+    const modal = document.getElementById('contact-modal');
+    const modalClose = document.getElementById('modal-close');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('show')) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ── NAVBAR SCROLL EFFECT ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.25)';
+      } else {
+        navbar.style.boxShadow = '0 2px 12px rgba(0,0,0,0.18)';
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>
